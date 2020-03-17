@@ -44,7 +44,9 @@ const postedByAuthUser = user && user.uid === link.postedBy.id
       </div>
       <div className="ml1">
         <div>
-          {link.description}{" "}
+          <a href={link.url} className="black no-underline">
+            {link.description}
+          </a>{" "}
           <span className="link">({getDomain(link.url)})</span>
         </div>
         <div className="f6 lh-copy gray">
@@ -59,8 +61,11 @@ const postedByAuthUser = user && user.uid === link.postedBy.id
           {postedByAuthUser && (
             <>
               {" | "}
-              <span className="delete-button" onClick={handleDeleteLink}> delete </span>
-              </>
+              <span className="delete-button" onClick={handleDeleteLink}>
+                {" "}
+                delete{" "}
+              </span>
+            </>
           )}
         </div>
       </div>
